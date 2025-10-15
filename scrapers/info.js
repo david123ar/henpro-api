@@ -22,6 +22,9 @@ function scrapeInfoPage(html) {
     $('meta[itemprop="image"]').attr("content") ||
     null;
 
+  const censorship =
+    $(".poster .buttonuncensured span").text().trim() || "cen"
+
   const date =
     $(".extra .date").text().trim() ||
     $('meta[itemprop="dateCreated"]').attr("content") ||
@@ -83,7 +86,9 @@ function scrapeInfoPage(html) {
     const link = $(el).attr("href") || null;
     const slug = extractSlug(link);
     const image =
-      $(el).find("img").attr("data-src") || $(el).find("img").attr("src") || null;
+      $(el).find("img").attr("data-src") ||
+      $(el).find("img").attr("src") ||
+      null;
     const name = $(el).find("img").attr("alt") || null;
     if (link) related.push({ name, link, slug, image });
   });
@@ -92,6 +97,7 @@ function scrapeInfoPage(html) {
   return {
     title,
     poster,
+    censorship,
     date,
     synopsis,
     genres,

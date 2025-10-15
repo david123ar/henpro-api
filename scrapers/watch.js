@@ -68,10 +68,9 @@ function scrapeWatchPage(html, url) {
 
   const downloadLink = $(".download-video").attr("href") || null;
 
-  const poster =
-    $('meta[itemprop="thumbnailUrl"]').attr("content") ||
-    $("#info .poster img").attr("src") ||
-    null;
+  const poster = $("#info .poster a img").attr("src") || null;
+
+  const backdrop = $('meta[itemprop="thumbnailUrl"]').attr("content");
 
   const uploadDate = $('meta[itemprop="uploadDate"]').attr("content") || null;
   const duration = $('meta[itemprop="duration"]').attr("content") || null;
@@ -133,10 +132,11 @@ function scrapeWatchPage(html, url) {
 
   return {
     title,
-    videoUrl,        // ✅ Highest quality MP4 link (auto-selected)
-    iframeSrc,       // Original iframe URL
+    videoUrl, // ✅ Highest quality MP4 link (auto-selected)
+    iframeSrc, // Original iframe URL
     downloadLink,
     poster,
+    backdrop,
     uploadDate,
     duration,
     views,

@@ -83,14 +83,14 @@ function scrapeInfoPage(html) {
   // 🔁 Related Series
   const related = [];
   $(".srelacionados article a").each((i, el) => {
-    const link = $(el).attr("href") || null;
-    const slug = extractSlug(link);
-    const image =
+    const slug = $(el).attr("href") || null;
+    const link = extractSlug(slug);
+    const poster =
       $(el).find("img").attr("data-src") ||
       $(el).find("img").attr("src") ||
       null;
-    const name = $(el).find("img").attr("alt") || null;
-    if (link) related.push({ name, link, slug, image });
+    const title = $(el).find("img").attr("alt") || null;
+    if (link) related.push({ title, link, slug, poster });
   });
 
   // ✅ Return Final Object

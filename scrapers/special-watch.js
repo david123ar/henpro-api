@@ -81,7 +81,7 @@ function scrapeSingleVideo(html) {
     related.push({
       title: $(el).find(".title").text().trim(),
       link: $(el).find("a.thumb").attr("href"),
-      thumbnail: $(el).find("img").attr("src"),
+      thumbnail: $(el).find("img.video-img").attr("data-src") ,
       duration: $(el).find(".duration").text().trim(),
       views: $(el).find(".views-number").text().trim(),
       rating: $(el).find(".rating").text().trim()

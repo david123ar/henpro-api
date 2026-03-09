@@ -20,6 +20,7 @@ const specialArtistRoute = require("./routes/special-artist.js");
 const specialArtistVideosRoute = require("./routes/special-artistVideos");
 const specialCharactersRoute = require("./routes/special-characters");
 const specialCharactersVideosRoute = require("./routes/special-charactersVideos");
+const specialSearchRoute = require("./routes/special-search");
 
 const app = express();
 const PORT = 3322;
@@ -46,7 +47,8 @@ app.use("/api/special-artist", specialArtistRoute);
 app.use("/api/special-artistVideos", specialArtistVideosRoute);
 app.use("/api/special-characters", specialCharactersRoute);
 app.use("/api/special-charactersVideos", specialCharactersVideosRoute);
+app.use("/api/special-search", specialSearchRoute);
 
 app.listen(PORT, () =>
-  console.log(`Scraper API running on http://localhost:${PORT}`)
+  console.log(`Scraper API running on http://localhost:${PORT}`),
 );

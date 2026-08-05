@@ -18,8 +18,8 @@ router.get("/", async (req, res) => {
 
     const url =
       page == 1
-        ? `https://3dhentai.co/?s=${encodeURIComponent(query)}`
-        : `https://3dhentai.co/page/${page}/?s=${encodeURIComponent(query)}`;
+        ? `https://3d-hentai.co/?s=${encodeURIComponent(query)}`
+        : `https://3d-hentai.co/page/${page}/?s=${encodeURIComponent(query)}`;
 
     const html = await fetchHTML(url);
 

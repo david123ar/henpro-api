@@ -10,8 +10,8 @@ router.get("/", async (req, res) => {
 
     const url =
       page == 1
-        ? "https://3dhentai.co/tags/"
-        : `https://3dhentai.co/tags/page/${page}/`;
+        ? "https://3d-hentai.co/tags/"
+        : `https://3d-hentai.co/tags/page/${page}/`;
 
     const html = await fetchHTML(url);
     const data = scrapeTagsPage(html);

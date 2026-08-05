@@ -10,8 +10,8 @@ router.get("/", async (req, res) => {
 
     const url =
       page == 1
-        ? "https://3dhentai.co/artist/"
-        : `https://3dhentai.co/artist/page/${page}/`;
+        ? "https://3d-hentai.co/artist/"
+        : `https://3d-hentai.co/artist/page/${page}/`;
 
     const html = await fetchHTML(url);
     const data = scrapeArtistPage(html);

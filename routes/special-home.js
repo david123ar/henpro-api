@@ -10,8 +10,8 @@ router.get("/", async (req, res) => {
 
     const url =
       page == 1
-        ? `https://3dhentai.co/`
-        : `https://3dhentai.co/page/${page}`;
+        ? `https://3d-hentai.co/`
+        : `https://3d-hentai.co/page/${page}`;
 
     const html = await fetchHTML(url);
     const data = scrapeSpecialHome(html);

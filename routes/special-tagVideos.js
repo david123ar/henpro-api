@@ -18,8 +18,8 @@ router.get("/:slug", async (req, res) => {
 
     const url =
       page == 1
-        ? `https://3dhentai.co/tag/${slug}/`
-        : `https://3dhentai.co/tag/${slug}/page/${page}/`;
+        ? `https://3d-hentai.co/tag/${slug}/`
+        : `https://3d-hentai.co/tag/${slug}/page/${page}/`;
 
     const html = await fetchHTML(url);
     const data = scrapeTagVideos(html);

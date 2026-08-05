@@ -15,7 +15,7 @@ router.get("/:slug", async (req, res) => {
       });
     }
 
-    const url = `https://3dhentai.co/${slug}/`;
+    const url = `https://3d-hentai.co/${slug}/`;
 
     const html = await fetchHTML(url);
     const data = scrapeSpecialWatch(html);
